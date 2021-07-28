@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    background: hsl(0, 0%, 95%);
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+
+    .container {
+        max-width: 1000px;
+        display: flex;
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            max-width: 500px;
+        }
+
+        .item {
+            padding: 55px 50px;
+
+            &:nth-child(1) {
+                background: hsl(31, 77%, 52%);
+
+                a {
+                    color: hsl(31, 77%, 52%);
+                }
+            }
+
+            &:nth-child(2) {
+                background: hsl(184, 100%, 22%);
+
+                a {
+                    color: hsl(184, 100%, 22%);
+                }
+            }
+
+            &:nth-child(3) {
+                background: hsl(179, 100%, 13%);
+
+                a {
+                    color: hsl(179, 100%, 13%);
+                    ;
+                }
+            }
+
+            .icon {
+                img {
+                    margin-bottom: 20px;
+                }
+            }
+
+            h1 {
+                font-family: 'Big Shoulders Display', cursive;
+                color: hsl(0, 0%, 95%);
+                margin-bottom: 20px;
+                font-size: 2.4rem;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: hsla(0, 0%, 100%, 0.75);
+                margin-bottom: 80px;
+                font-size: 1.1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: transparent;
+                border: 3px solid hsl(0, 0%, 95%);
+                background: hsl(0, 0%, 95%);
+                border-radius: 50px;
+                padding: 10px 20px;
+                transition: background .2s;
+
+                &:hover {
+                    background: transparent;
+                    color: hsl(0, 0%, 95%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  background: #f2f2f2;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 30px;
+}
+
+section .container {
+  max-width: 1000px;
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  section .container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+}
+
+section .container .item {
+  padding: 55px 50px;
+}
+
+section .container .item:nth-child(1) {
+  background: #e38826;
+}
+
+section .container .item:nth-child(1) a {
+  color: #e38826;
+}
+
+section .container .item:nth-child(2) {
+  background: #006970;
+}
+
+section .container .item:nth-child(2) a {
+  color: #006970;
+}
+
+section .container .item:nth-child(3) {
+  background: #004241;
+}
+
+section .container .item:nth-child(3) a {
+  color: #004241;
+}
+
+section .container .item .icon img {
+  margin-bottom: 20px;
+}
+
+section .container .item h1 {
+  font-family: 'Big Shoulders Display', cursive;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+section .container .item p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 80px;
+  font-size: 1.1rem;
+}
+
+section .container .item a {
+  text-decoration: none;
+  color: transparent;
+  border: 3px solid #f2f2f2;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 20px;
+  transition: background .2s;
+}
+
+section .container .item a:hover {
+  background: transparent;
+  color: #f2f2f2;
+}
