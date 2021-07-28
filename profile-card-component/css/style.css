@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#19a2ae, #19a2ae);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+section .card__container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 150px #6a6f81;
+  background: #fff;
+  z-index: 1;
+}
+
+section .card__container .cover__photo img {
+  width: 100%;
+}
+
+section .card__container .profile__info {
+  position: relative;
+}
+
+section .card__container .profile__info .profile__pic {
+  position: absolute;
+  top: -70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section .card__container .profile__info .profile__pic img {
+  border-radius: 50%;
+  border: 5px solid white;
+  background-color: white;
+}
+
+section .card__container .about {
+  text-align: center;
+  margin: 64px 0 32px 0;
+}
+
+section .card__container .about h2 {
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  color: #2d3248;
+}
+
+section .card__container .about h2 span {
+  font-weight: lighter;
+  color: #969696;
+}
+
+section .card__container .about p {
+  font-size: .875rem;
+  color: #969696;
+}
+
+section .card__container .stats {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid #d4d4d4;
+  padding: 32px;
+  text-align: center;
+}
+
+section .card__container .stats h2 {
+  font-size: 1.125rem;
+  margin-bottom: 5px;
+  color: #2d3248;
+}
+
+section .card__container .stats p {
+  font-size: 0.875rem;
+  color: #969696;
+}
+
+section .bg_pattern_top {
+  position: absolute;
+  width: 100%;
+  top: -115%;
+  left: -45%;
+}
+
+@media screen and (max-width: 1100px) {
+  section .bg_pattern_top {
+    top: -50%;
+    left: -40%;
+    width: 100%;
+  }
+}
+
+section .bg_pattern_bottom {
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  right: -42%;
+}
+
+@media screen and (max-width: 1100px) {
+  section .bg_pattern_bottom {
+    top: 50%;
+    right: -55%;
+    width: 100%;
+  }
+}
