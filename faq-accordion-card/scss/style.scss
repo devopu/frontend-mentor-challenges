@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin medium-device {
+    @media screen and (max-width: 1000px) {
+        @content;
+    }
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+
+    @include medium-device {
+        padding: 200px 15px 100px 15px;
+    }
+}
+
+.card__container {
+    background: hsl(0, 0%, 100%);
+    max-width: 900px;
+    display: flex;
+    border-radius: 20px;
+    position: relative;
+
+    @include medium-device {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .illustration__box {
+        position: absolute;
+        z-index: 2;
+        top: 37%;
+        left: -10%;
+
+        @include medium-device {
+            top: -10%;
+            width: 30%;
+            left: 10%;
+        }
+    }
+
+    .card__image {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+
+        @include medium-device {
+            overflow: visible;
+            padding-top: 100px;
+        }
+
+        .illustration__woman {
+            width: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15%;
+            z-index: 1;
+
+            @include medium-device {
+                position: absolute;
+                width: 75%;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -130px;
+            }
+        }
+
+        .bg__pattern {
+            position: absolute;
+            width: 170%;
+            left: -85%;
+            top: -40%;
+
+            @include medium-device {
+                position: absolute;
+                width: 75%;
+                left: 13%;
+                top: -130%;
+            }
+        }
+    }
+
+    .card__info {
+        flex: 1;
+        padding: 80px 32px;
+
+        h2 {
+            color: hsl(237, 12%, 33%);
+            font-size: 1.7rem;
+            margin-bottom: 16px;
+
+            @include medium-device {
+                text-align: center;
+            }
+        }
+
+        .faq__container {
+            padding-right: 24px;
+            height: 210px;
+            overflow: auto;
+
+            @include medium-device {
+                height: auto;
+                padding-right: 0;
+            }
+
+            &::-webkit-scrollbar {
+                width: 5px;
+
+                @include medium-device {
+                    display: none;
+                }
+            }
+
+            &::-webkit-scrollbar-track {
+                background: hsl(0, 0%, 95%);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: hsl(0, 0%, 71%);
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: hsl(0, 0%, 65%);
+            }
+
+            .faq {
+                color: hsl(240, 6%, 50%);
+                border-bottom: 1px solid hsl(240, 5%, 91%);
+                padding: 12px 0;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .question {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    cursor: pointer;
+
+                    span {
+                        font-size: .9rem;
+
+                        &:hover {
+                            color: hsl(14, 88%, 65%);
+                        }
+                    }
+
+                    img {
+                        width: 13px;
+                        transition: .3s;
+                    }
+                }
+
+                .answer {
+                    font-size: 0.85rem;
+                    line-height: 16px;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: .3s;
+                }
+
+                &.active {
+                    .question {
+                        span {
+                            color: hsl(237, 12%, 33%);
+                            font-weight: bold;
+                        }
+
+                        img {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .answer {
+                        max-height: 50px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

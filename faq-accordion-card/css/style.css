@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#af67e9, #6565e7);
+}
+
+@media screen and (max-width: 1000px) {
+  section {
+    padding: 200px 15px 100px 15px;
+  }
+}
+
+.card__container {
+  background: white;
+  max-width: 900px;
+  display: flex;
+  border-radius: 20px;
+  position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container {
+    flex-direction: column;
+    max-width: 400px;
+  }
+}
+
+.card__container .illustration__box {
+  position: absolute;
+  z-index: 2;
+  top: 37%;
+  left: -10%;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .illustration__box {
+    top: -10%;
+    width: 30%;
+    left: 10%;
+  }
+}
+
+.card__container .card__image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__image {
+    overflow: visible;
+    padding-top: 100px;
+  }
+}
+
+.card__container .card__image .illustration__woman {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__image .illustration__woman {
+    position: absolute;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -130px;
+  }
+}
+
+.card__container .card__image .bg__pattern {
+  position: absolute;
+  width: 170%;
+  left: -85%;
+  top: -40%;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__image .bg__pattern {
+    position: absolute;
+    width: 75%;
+    left: 13%;
+    top: -130%;
+  }
+}
+
+.card__container .card__info {
+  flex: 1;
+  padding: 80px 32px;
+}
+
+.card__container .card__info h2 {
+  color: #4a4b5e;
+  font-size: 1.7rem;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__info h2 {
+    text-align: center;
+  }
+}
+
+.card__container .card__info .faq__container {
+  padding-right: 24px;
+  height: 210px;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__info .faq__container {
+    height: auto;
+    padding-right: 0;
+  }
+}
+
+.card__container .card__info .faq__container::-webkit-scrollbar {
+  width: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .card__container .card__info .faq__container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card__container .card__info .faq__container::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+.card__container .card__info .faq__container::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+}
+
+.card__container .card__info .faq__container::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6;
+}
+
+.card__container .card__info .faq__container .faq {
+  color: #787887;
+  border-bottom: 1px solid #e7e7e9;
+  padding: 12px 0;
+}
+
+.card__container .card__info .faq__container .faq:last-child {
+  border-bottom: none;
+}
+
+.card__container .card__info .faq__container .faq .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.card__container .card__info .faq__container .faq .question span {
+  font-size: .9rem;
+}
+
+.card__container .card__info .faq__container .faq .question span:hover {
+  color: #f47c57;
+}
+
+.card__container .card__info .faq__container .faq .question img {
+  width: 13px;
+  transition: .3s;
+}
+
+.card__container .card__info .faq__container .faq .answer {
+  font-size: 0.85rem;
+  line-height: 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card__container .card__info .faq__container .faq.active .question span {
+  color: #4a4b5e;
+  font-weight: bold;
+}
+
+.card__container .card__info .faq__container .faq.active .question img {
+  transform: rotate(180deg);
+}
+
+.card__container .card__info .faq__container .faq.active .answer {
+  max-height: 50px;
+  margin-top: 10px;
+}
