@@ -1,0 +1,204 @@
+@mixin medium-device {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./../images/bg-pattern-top-desktop.svg"),
+        url("./../images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, bottom right;
+
+    @include medium-device {
+        padding: 80px 0;
+        background: url("./../images/bg-pattern-top-mobile.svg"),
+            url("./../images/bg-pattern-bottom-mobile.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: left top, bottom right;
+    }
+}
+
+.container {
+    max-width: 1000px;
+    padding: 16px;
+
+    @include medium-device {
+        max-width: 400px;
+    }
+}
+
+.rating__section {
+    display: flex;
+    margin-bottom: 48px;
+
+    @include medium-device {
+        flex-direction: column;
+    }
+
+
+    .info {
+        flex: 1;
+
+        @include medium-device {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: hsl(300, 43%, 22%);
+            margin-bottom: 16px;
+            line-height: 45px;
+
+            @include medium-device {
+                font-size: 2.3rem;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        p {
+            color: hsl(303, 10%, 53%);
+            font-size: 0.938rem;
+            font-weight: 700;
+            line-height: 25px;
+            word-spacing: 3px;
+        }
+    }
+
+    .ratings {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        @include medium-device {
+            margin-top: 32px;
+        }
+
+        .category {
+            background: hsl(300, 24%, 96%);
+            border-radius: 3px;
+            display: flex;
+            padding: 16px 32px;
+            margin-bottom: 16px;
+            font-size: 0.938rem;
+
+            @include medium-device {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .star__rating {
+                margin-right: 24px;
+
+                @include medium-device {
+                    margin-bottom: 8px;
+                }
+            }
+
+            &:nth-child(1) {
+                align-self: flex-start;
+
+                @include medium-device {
+                    align-self: stretch;
+                }
+            }
+
+            &:nth-child(2) {
+                align-self: center;
+
+                @include medium-device {
+                    align-self: stretch;
+                }
+            }
+
+            &:nth-child(3) {
+                align-self: flex-end;
+
+                @include medium-device {
+                    align-self: stretch;
+                }
+            }
+
+            span {
+                color: hsl(300, 43%, 22%);
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.review__section {
+    display: flex;
+
+    @include medium-device {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-right: 24px;
+        border-radius: 10px;
+        padding: 40px 24px;
+        background: hsl(300, 43%, 22%);
+        font-size: .8rem;
+
+        @include medium-device {
+            margin-right: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .client__info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+
+            img {
+                border-radius: 50%;
+                width: 40px;
+                margin-right: 16px;
+            }
+
+            h4 {
+                color: hsl(0, 0%, 100%);
+
+                &:nth-child(2) {
+                    color: hsl(333, 80%, 67%);
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .feedback {
+            color: hsl(300, 24%, 96%);
+            line-height: 20px;
+            font-weight: 400;
+        }
+
+        &:nth-child(2) {
+            transform: translateY(15px);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(30px);
+        }
+    }
+}
