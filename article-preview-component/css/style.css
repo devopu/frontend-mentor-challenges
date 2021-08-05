@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.815rem;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #ecf2f8;
+}
+
+.article__container {
+  max-width: 750px;
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 5px 100px #9eafc2;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container {
+    max-width: 400px;
+    flex-direction: column;
+  }
+}
+
+.article__container .image__section {
+  flex: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .image__section {
+    height: 210px;
+  }
+}
+
+.article__container .image__section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .image__section img {
+    border-radius: 15px 15px 0 0;
+  }
+}
+
+.article__container .article__section {
+  flex: 1.5;
+}
+
+.article__container .article__section .content {
+  padding: 30px;
+}
+
+.article__container .article__section .content h2 {
+  color: #48556a;
+  padding-right: 55px;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content h2 {
+    padding-right: 0;
+    word-spacing: 2px;
+  }
+}
+
+.article__container .article__section .content p {
+  color: #6d7f97;
+  margin: 15px 0;
+  word-spacing: 2px;
+  line-height: 22px;
+}
+
+.article__container .article__section .content div {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.article__container .article__section .content div .profile {
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .profile {
+    margin-top: 8px;
+  }
+}
+
+.article__container .article__section .content div .profile img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.article__container .article__section .content div .profile .profile__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.article__container .article__section .content div .profile .profile__info .name {
+  color: #48556a;
+  font-weight: 700;
+}
+
+.article__container .article__section .content div .profile .profile__info .date {
+  color: #9eafc2;
+}
+
+.article__container .article__section .content div .share__icon {
+  background: #ecf2f8;
+  width: 15px;
+  height: 15px;
+  padding: 8px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .share__icon {
+    align-self: flex-end;
+  }
+}
+
+.article__container .article__section .content div .tooltip {
+  background: #48556a;
+  padding: 12px 24px;
+  border-radius: 10px;
+  position: absolute;
+  top: -65px;
+  right: -85px;
+  display: none;
+  align-items: center;
+  box-shadow: 0 0 10px #9eafc2;
+}
+
+.article__container .article__section .content div .tooltip span {
+  color: #9eafc2;
+  margin-right: 16px;
+  letter-spacing: 3px;
+}
+
+.article__container .article__section .content div .tooltip img {
+  width: 15px;
+  height: 15px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .tooltip img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-width: 900px) {
+  .article__container .article__section .content div .tooltip img:last-child {
+    margin-right: 0;
+  }
+}
+
+.article__container .article__section .content div .tooltip img:nth-child(4) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .tooltip img:nth-child(4) {
+    margin-right: 16px;
+  }
+}
+
+.article__container .article__section .content div .tooltip .share__icon {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .tooltip .share__icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.article__container .article__section .content div .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #48556a;
+}
+
+@media screen and (max-width: 900px) {
+  .article__container .article__section .content div .tooltip {
+    width: calc(100% + 64px);
+    padding: 32px;
+    left: -32px;
+    border-radius: 0 0 15px 15px;
+    height: 80px;
+    top: 0;
+  }
+  .article__container .article__section .content div .tooltip::after {
+    display: none;
+  }
+}
+
+.article__container .article__section .content div .tooltip.active {
+  display: flex;
+}
+
+.article__container .article__section .content div .tooltip.active img:nth-child(5) {
+  align-self: center;
+}
