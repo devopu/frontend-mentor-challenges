@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 850px;
+  padding: 16px;
+}
+
+.container .heading {
+  text-align: center;
+  margin: auto;
+  color: #4c4e61;
+}
+
+@media screen and (max-width: 900px) {
+  .container .heading {
+    width: 100%;
+    padding: 0 8px;
+  }
+}
+
+.container .heading h1 {
+  font-size: 1.7rem;
+  line-height: 35px;
+}
+
+@media screen and (max-width: 900px) {
+  .container .heading h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.container .heading h1:first-child {
+  font-weight: lighter;
+}
+
+.container .heading p {
+  font-size: .9rem;
+  margin-top: 8px;
+  color: #a3a5ae;
+  font-weight: 200;
+}
+
+.container .heading p span {
+  display: block;
+}
+
+@media screen and (max-width: 550px) {
+  .container .heading p span {
+    display: inline;
+  }
+}
+
+.container .grid__container {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .container .grid__container {
+    display: block;
+    max-width: 350px;
+    padding-top: 32px;
+    margin: auto;
+  }
+}
+
+.container .grid__container .grid__item {
+  padding: 20px 24px 16px 24px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(163, 165, 174, 0.3);
+}
+
+@media screen and (max-width: 900px) {
+  .container .grid__container .grid__item {
+    margin-bottom: 24px;
+  }
+}
+
+.container .grid__container .grid__item h3 {
+  font-size: 1rem;
+  color: #4c4e61;
+  margin-bottom: 5px;
+}
+
+.container .grid__container .grid__item p {
+  font-size: .75rem;
+  color: #a3a5ae;
+}
+
+.container .grid__container .grid__item img {
+  width: 45px;
+  align-self: flex-end;
+  margin-top: 32px;
+}
+
+.container .grid__container .grid__item:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  border-top: 4px solid #45d3d3;
+}
+
+.container .grid__container .grid__item:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  border-top: 4px solid #ea5353;
+}
+
+.container .grid__container .grid__item:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+  border-top: 4px solid #fcaf4a;
+}
+
+.container .grid__container .grid__item:nth-child(4) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+  border-top: 4px solid #549ef2;
+}

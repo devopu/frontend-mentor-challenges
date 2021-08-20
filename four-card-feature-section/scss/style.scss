@@ -1,0 +1,137 @@
+@mixin medium-device {
+    @media screen and (max-width: 900px) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+}
+
+.container {
+    max-width: 850px;
+    padding: 16px;
+
+    .heading {
+        text-align: center;
+        margin: auto;
+        color: hsl(234, 12%, 34%);
+
+        @include medium-device {
+            width: 100%;
+            padding: 0 8px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            line-height: 35px;
+
+            @include medium-device {
+                font-size: 1.5rem;
+            }
+
+            &:first-child {
+                font-weight: lighter;
+            }
+        }
+
+        p {
+            font-size: .9rem;
+            margin-top: 8px;
+            color: hsl(229, 6%, 66%);
+            font-weight: 200;
+
+            span {
+                display: block;
+
+                @media screen and (max-width: 550px) {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .grid__container {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+
+        @include medium-device {
+            display: block;
+            max-width: 350px;
+            padding-top: 32px;
+            margin: auto;
+        }
+
+        .grid__item {
+            padding: 20px 24px 16px 24px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            box-shadow: 0 5px 25px hsla(229, 6%, 66%, 0.3);
+
+            @include medium-device {
+                margin-bottom: 24px;
+            }
+
+            h3 {
+                font-size: 1rem;
+                color: hsl(234, 12%, 34%);
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: .75rem;
+                color: hsl(229, 6%, 66%);
+            }
+
+            img {
+                width: 45px;
+                align-self: flex-end;
+                margin-top: 32px;
+            }
+
+            &:nth-child(1) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 4;
+                border-top: 4px solid hsl(180, 62%, 55%);
+            }
+
+            &:nth-child(2) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
+                border-top: 4px solid hsl(0, 78%, 62%);
+            }
+
+            &:nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row: 3 / 5;
+                border-top: 4px solid hsl(34, 97%, 64%);
+            }
+
+            &:nth-child(4) {
+                grid-column: 3 / 4;
+                grid-row: 2 / 4;
+                border-top: 4px solid hsl(212, 86%, 64%);
+            }
+
+        }
+    }
+}
